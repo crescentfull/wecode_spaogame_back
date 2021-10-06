@@ -1,6 +1,6 @@
 from django.db      import models
 
-from users.models   import TimeStampedModel
+from core.models   import TimeStampedModel
 
 class Menu(TimeStampedModel) :
     name = models.CharField(max_length=20)
