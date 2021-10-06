@@ -52,4 +52,4 @@ class DetailedProduct(TimeStampedModel) :
     product      = models.ForeignKey(Product,      on_delete=models.CASCADE)
 
     class Meta : 
-        db_table = 'detailedProducts'
+        db_table = 'detailed_products'
