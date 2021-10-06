@@ -1,7 +1,9 @@
 from django.db       import models
+
 from users.models    import User
-from products.models import Product
 from users.models    import TimeStampedModel
+from products.models import Product
+
 
 class Posting(TimeStampedModel):
     user            = models.ForeignKey('users.User', on_delete=models.CASCADE)
