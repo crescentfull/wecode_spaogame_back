@@ -1,21 +1,17 @@
-from django.db    import models
+from django.db      import models
 
-from users.models import TimeStampedModel
+from users.models   import TimeStampedModel
 
 class Wishlist(TimeStampedModel) :
-
     user    = models.ForeignKey('users.User', on_delete=models.CASCADE)
     product = models.ForeignKey('products.Product', on_delete=models.CASCADE)
 
     class Meta :
-
         db_table = 'wishlists'
 
 class Basket(TimeStampedModel) :
-
     user    = models.ForeignKey('users.User', on_delete=models.CASCADE)
     product = models.ForeignKey('products.Product', on_delete=models.CASCADE)
 
     class Meta :
-
         db_table = 'baskets'
