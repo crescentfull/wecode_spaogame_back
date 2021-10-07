@@ -1,5 +1,7 @@
 import json
 
+from django.db.models.fields import GenericIPAddressField
+
 import bcrypt
 import jwt
 
@@ -16,10 +18,14 @@ class SignUp(View):
     def post(self, request):
         try :
             data            = json.loads(request.body)
-            name            = data['name']
+            username        = data['username']
             email           = data['email']
             password        = data['password']
             mobile_number   = data['mobile_number']
+            address1        = data['address1']
+            address2        = data['address2']
+            birthday        = data['birthday']
+            gender          = data['gender']
             
 
             validate_email(email)
@@ -32,7 +38,7 @@ class SignUp(View):
             decoded_hashed_pw = hashed_pw.decode('utf-8')
             
             User.objects.create(
-                name         = name,
+                username     = name,
                 email        = email,
                 password     = decoded_hashed_pw,
                 phone_number = phone_number,
